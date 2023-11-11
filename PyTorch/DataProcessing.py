@@ -1,16 +1,16 @@
 import torch
+from config import *
 import torchvision
 from torchvision import transforms, datasets
 from torch.utils.data import DataLoader
 
-train_transform = transforms.Compose([ transforms.resize((224,224)),
+train_transform = transforms.Compose([ transforms.Resize((224,224)),
                                         transforms.RandomHorizontalFlip(),
-                                        transforms.Normalize((0.5,0.5,0.5),(0.5,0.5,0.5)),
-                                        transforms.ToTensor()])
+                                        transforms.ToTensor(),
+                                       transforms.Normalize((0.5,0.5,0.5),(0.5,0.5,0.5))])
 
-val_test_transform = transforms.Compose([ transforms.resize((224,224)),
-                                          transforms.Normalize((0.5,0.5,0.5),(0.5,0.5,0.5)),
-                                          transforms.ToTensor()])
+val_test_transform = transforms.Compose([ transforms.Resize((224,224)), transforms.ToTensor(),
+                                          transforms.Normalize((0.5,0.5,0.5),(0.5,0.5,0.5))])
 
 
 def data_preparation(train_path, test_path, batch_size, val_size = 0.2):
@@ -32,3 +32,24 @@ def data_preparation(train_path, test_path, batch_size, val_size = 0.2):
 
     return train_loader, val_loader, test_loader
 
+
+
+# ============== Labels of the Dataset ============== #
+
+train_path = 'E:\PyTorch\Classification Tasks\Brain Tumor Classification (MRI)\Data\Training'
+test_path = 'E:\PyTorch\Classification Tasks\Brain Tumor Classification (MRI)\Data\Testing'
+
+train_loader, val_loader, test_loader = data_preparation(train_path, test_path, batch_size)
+
+
+# Get the dataset from the train_loader
+# For random_split datasets, access the original dataset using .dataset
+train_dataset = train_loader.dataset.dataset
+
+# Access class_to_idx from ImageFolder
+class_to_idx = train_dataset.class_to_idx
+
+# Print class names and their corresponding labels
+print("Class names and their corresponding labels:")
+for class_name, label in class_to_idx.items():
+    print(f"{class_name}: {label}")

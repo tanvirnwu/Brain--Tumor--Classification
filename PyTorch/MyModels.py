@@ -6,12 +6,12 @@ import torch.nn.functional as F
 
 
 class MyModel_1(nn.Module):
-    def __len__(self, input_shape: int, hidden_units: int, output_shape: int):
+    def __init__(self, input_shape: int, hidden_units: int, output_shape: int):
         super(MyModel_1, self).__init__()
         self.block1 = nn.Sequential(
             nn.Conv2d(in_channels=input_shape, out_channels=hidden_units, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
-            nn.conv2d(in_channels=hidden_units, out_channels=hidden_units, kernel_size=3, stride=1, padding=1),
+            nn.Conv2d(in_channels=hidden_units, out_channels=hidden_units, kernel_size=3, stride=1, padding=1),
             nn.BatchNorm2d(hidden_units),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2)
@@ -21,7 +21,7 @@ class MyModel_1(nn.Module):
             nn.Conv2d(in_channels=hidden_units, out_channels=hidden_units*2, kernel_size=3, stride=1, padding=1),
             nn.BatchNorm2d(hidden_units*2),
             nn.ReLU(),
-            nn.conv2d(in_channels=hidden_units*2, out_channels=hidden_units*2, kernel_size=3, stride=1, padding=1),
+            nn.Conv2d(in_channels=hidden_units*2, out_channels=hidden_units*2, kernel_size=3, stride=1, padding=1),
             nn.BatchNorm2d(hidden_units*2),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2)
@@ -31,7 +31,7 @@ class MyModel_1(nn.Module):
             nn.Conv2d(in_channels=hidden_units*2, out_channels=hidden_units, kernel_size=3, stride=1, padding=1),
             nn.BatchNorm2d(hidden_units),
             nn.ReLU(),
-            nn.conv2d(in_channels=hidden_units, out_channels=hidden_units, kernel_size=3, stride=1, padding=1),
+            nn.Conv2d(in_channels=hidden_units, out_channels=hidden_units, kernel_size=3, stride=1, padding=1),
             nn.BatchNorm2d(hidden_units),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2)
@@ -39,7 +39,7 @@ class MyModel_1(nn.Module):
 
         self.classifier = nn.Sequential(
             nn.Flatten(),
-            nn.Linear(hidden_units*4*4, output_shape)
+            nn.Linear(hidden_units*28*28, output_shape)
         )
 
     def forward(self, x: torch.Tensor):
