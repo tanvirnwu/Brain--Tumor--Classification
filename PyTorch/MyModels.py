@@ -47,7 +47,7 @@ class MyModel_1(nn.Module):
         x = self.block1(x)
         x = self.block2(x)
         x = self.block3(x)
-        print(x.shape)
+        # print(x.shape)
         x = self.classifier(x)
 
         return x

@@ -1,6 +1,6 @@
 from MyModels import *
 from DataProcessing import *
-from config import *
+from Config import *
 from torchinfo import summary
 
 train_path = 'E:\PyTorch\Classification Tasks\Brain Tumor Classification (MRI)\Data\Training'
