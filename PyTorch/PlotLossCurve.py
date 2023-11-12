@@ -47,13 +47,11 @@ def plot_loss_curves(results: Dict[str, List[float]], save_path: str):
 
     plt.show()
 
-
-
+# ================= Loading the Training Results =================
 import pickle
 results_path = r'E:\PyTorch\Classification Tasks\Brain Tumor Classification (MRI)\PyTorch\Training Results\AlexNet_1_results.pkl'
 save_path = r'E:\PyTorch\Classification Tasks\Brain Tumor Classification (MRI)\PyTorch\Training Results\AlexNet_1_results.png'
 
-# ================= Loading the Training Results =================
 with open(results_path, 'rb') as file:
     loaded_results = pickle.load(file)
 print(loaded_results)
