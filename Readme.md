@@ -7,7 +7,12 @@
 </div>
 
 ## Dataset
-Here I have used a [publicly dataset on Kaggle](https://www.kaggle.com/datasets/sartajbhuvaji/brain-tumor-classification-mri/data) and used several classification algorithms to classify the tumor.
+Here I have used a [publicly available dataset on Kaggle](https://www.kaggle.com/datasets/sartajbhuvaji/brain-tumor-classification-mri/data') and used several classification algorithms to classify the tumor.
+There are 4 classes in the dataset:
+1. Glioma Tumor
+2. Meningioma Tumor
+3. Pituitary Tumor
+4. No Tumor
 
 ## Frameworks
 - PyTorch
