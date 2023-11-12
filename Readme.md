@@ -28,6 +28,7 @@ I have saved the best performing model in the `Saved Models` folder.
 ## Results
 - Single Inference has been done the separate notebook `Inference.ipynb` on the test_loader dataset which has not been used to train the models.
 - Inference outputs are saved in the `Inference Images` folder.
+- `Training Results` folder contains the training results of the models during training for example, training loss, validation loss, training accuracy, validation accuracy, etc.
 
 
 Thank you for visiting my repository. If you liked it, please give a star ⭐️
