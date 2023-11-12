@@ -50,7 +50,7 @@ plt.axis('off')
 
 # Define the save path
 save_path = r'E:\PyTorch\Classification Tasks\Brain Tumor Classification (MRI)\PyTorch\Inference Images'
-save_filename = f"Predicted by ALexNet Actual_{idx_to_class[label.item()]} Predicted_{idx_to_class[predicted_label]}.png"
+save_filename = f"Predicted by MobileNet_V2 Actual_{idx_to_class[label.item()]} Predicted_{idx_to_class[predicted_label]}.png"
 
 # Create the directory if it does not exist
 os.makedirs(save_path, exist_ok=True)
