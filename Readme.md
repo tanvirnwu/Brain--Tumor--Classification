@@ -23,3 +23,6 @@ I have saved the best performing model in the `Saved Models` folder.
 ## Results
 - Single Inference has been done the separate notebook `Inference.ipynb` on the test_loader dataset which has not been used to train the models.
 - Inference outputs are saved in the `Inference Images` folder.
+
+
+Thank you for visiting my repository. If you liked it, please give a star ⭐️
