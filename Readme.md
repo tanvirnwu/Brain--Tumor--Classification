@@ -13,7 +13,7 @@ Here I have used a [publicly dataset on Kaggle](https://www.kaggle.com/datasets/
 - PyTorch
 
 ## Models
-Here I showed several pretrained classification models such as:
+I use the following models to classify Brain Tumor:
 - AlexNet
 - MobileNetV2
 
