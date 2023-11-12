@@ -11,3 +11,15 @@ Here I have used a [publicly dataset on Kaggle](https://www.kaggle.com/datasets/
 
 ## Frameworks
 - PyTorch
+
+## Models
+Here I showed several pretrained classification models such as:
+- AlexNet
+- MobileNetV2
+
+## Saved Models
+I have saved the best performing model in the `Saved Models` folder.
+
+## Results
+- Single Inference has been done the separate notebook `Inference.ipynb` on the test_loader dataset which has not been used to train the models.
+- Inference outputs are saved in the `Inference Images` folder.
