@@ -12,7 +12,6 @@ train_transform = transforms.Compose([ transforms.Resize((224,224)),
 val_test_transform = transforms.Compose([ transforms.Resize((224,224)), transforms.ToTensor(),
                                           transforms.Normalize((0.5,0.5,0.5),(0.5,0.5,0.5))])
 
-
 def data_preparation(train_path, test_path, batch_size, val_size = 0.2):
 
     full_dataset = datasets.ImageFolder(root = train_path)

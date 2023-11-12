@@ -1,12 +1,7 @@
 import matplotlib.pyplot as plt
-import numpy as np
-import torch
-import torch.nn as nn
 from typing import Dict, List
 
-
-
-def plot_loss_curves(results: Dict[str, List[float]]):
+def plot_loss_curves(results: Dict[str, List[float]], save_path: str):
     """Plots training curves of a results dictionary.
 
     Args:
@@ -45,5 +40,23 @@ def plot_loss_curves(results: Dict[str, List[float]]):
     plt.plot(epochs, val_accuracy, label='val_accuracy')
     plt.title('Accuracy')
     plt.xlabel('Epochs')
-    plt.legend();
+    plt.legend()
 
+     # Save the plot to the specified path
+    plt.savefig(save_path)
+
+    plt.show()
+
+
+
+import pickle
+results_path = r'E:\PyTorch\Classification Tasks\Brain Tumor Classification (MRI)\PyTorch\Training Results\AlexNet_1_results.pkl'
+save_path = r'E:\PyTorch\Classification Tasks\Brain Tumor Classification (MRI)\PyTorch\Training Results\AlexNet_1_results.png'
+
+# ================= Loading the Training Results =================
+with open(results_path, 'rb') as file:
+    loaded_results = pickle.load(file)
+print(loaded_results)
+
+# ================= Plotting the Training Results =================
+plot_loss_curves(loaded_results, save_path)
