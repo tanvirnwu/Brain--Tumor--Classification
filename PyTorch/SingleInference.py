@@ -1,20 +1,21 @@
 import torch
 import os
-from DataProcessing import data_preparation
+from DataProcessing import *
 from Config import *
 from MyModels import *
 import torchvision.transforms as transforms
 import matplotlib.pyplot as plt
 import numpy as np
 import random
+from torchvision import models
 
-train_path = 'E:\PyTorch\Classification Tasks\Brain Tumor Classification (MRI)\Data\Training'
-test_path = 'E:\PyTorch\Classification Tasks\Brain Tumor Classification (MRI)\Data\Testing'
-train_loader, val_loader, test_loader = data_preparation(train_path, test_path, batch_size)
+# ======== Model Architecture ========
+model = models.mobilenet_v2(weights=models.MobileNet_V2_Weights.IMAGENET1K_V1)
+in_features = model.classifier[1].in_features  # Get the number of input features for the classifier
+model.classifier[1] = torch.nn.Linear(in_features, 4)  # Adjust to match your saved model (4 classes)
 
-# Load the model
-model = MyModel_1(input_shape=3, hidden_units=10, output_shape=4)
-model.load_state_dict(torch.load(r'E:\PyTorch\Classification Tasks\Brain Tumor Classification (MRI)\PyTorch\Saved Models\best_model_1.pth'))
+# ======== Loading Saved Model ========
+model.load_state_dict(torch.load(r'E:\PyTorch\Classification Tasks\Brain Tumor Classification (MRI)\PyTorch\Saved Models\MobileNet_V2_1.pth'))
 model.to(device)
 model.eval()
 
@@ -49,7 +50,7 @@ plt.axis('off')
 
 # Define the save path
 save_path = r'E:\PyTorch\Classification Tasks\Brain Tumor Classification (MRI)\PyTorch\Inference Images'
-save_filename = f"actual_{idx_to_class[label.item()]}_predicted_{idx_to_class[predicted_label]}.png"
+save_filename = f"Predicted by ALexNet Actual_{idx_to_class[label.item()]} Predicted_{idx_to_class[predicted_label]}.png"
 
 # Create the directory if it does not exist
 os.makedirs(save_path, exist_ok=True)

@@ -31,3 +31,10 @@ def data_preparation(train_path, test_path, batch_size, val_size = 0.2):
     test_loader = DataLoader(test_dataset, batch_size = batch_size, shuffle = True)
 
     return train_loader, val_loader, test_loader
+
+
+train_path = 'E:\PyTorch\Classification Tasks\Brain Tumor Classification (MRI)\Data\Training'
+test_path = 'E:\PyTorch\Classification Tasks\Brain Tumor Classification (MRI)\Data\Testing'
+train_loader, val_loader, test_loader = data_preparation(train_path, test_path, batch_size)
+# Since we used random_split, access the original dataset using .dataset
+class_names = train_loader.dataset.dataset.classes
