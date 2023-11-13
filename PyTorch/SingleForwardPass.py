@@ -1,7 +1,6 @@
 from MyModels import *
 from DataProcessing import *
 from Config import *
-from torchinfo import summary
 
 train_path = 'E:\PyTorch\Classification Tasks\Brain Tumor Classification (MRI)\Data\Training'
 test_path = 'E:\PyTorch\Classification Tasks\Brain Tumor Classification (MRI)\Data\Testing'
@@ -31,8 +30,6 @@ def single_forward_pass(model_instance: nn.Module):
 
     # Sumamry of the model
     #summary(model_instance, input_size=[1, 3, 224, 224])
-
-
 
 # Instantiate the model
 model_instance = MyModel_1(input_shape=3, hidden_units=32, output_shape=4)

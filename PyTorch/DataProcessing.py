@@ -1,6 +1,4 @@
-import torch
 from Config import *
-import torchvision
 from torchvision import transforms, datasets
 from torch.utils.data import DataLoader
 

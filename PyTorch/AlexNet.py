@@ -1,4 +1,3 @@
-from Config import *
 from DataProcessing import *
 from TrainSteps import *
 from torchvision.models import alexnet, AlexNet_Weights

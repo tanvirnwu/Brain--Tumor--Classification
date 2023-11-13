@@ -1,5 +1,5 @@
 import torch
-import torch.nn as nn
+
 
 lr = 0.001
 batch_size = 32

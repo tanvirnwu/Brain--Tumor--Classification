@@ -1,4 +1,3 @@
-import torch
 from Config import *
 from tqdm.auto import tqdm
 

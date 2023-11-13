@@ -1,6 +1,3 @@
-import torch
-from torchsummary import summary
-from Config import *
 from TrainSteps import *
 from DataProcessing import *
 from torchvision.models import mobilenet_v2, MobileNet_V2_Weights
