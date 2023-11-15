@@ -31,4 +31,4 @@ I have saved the best performing model in the `Saved Models` folder.
 - `Training Results` folder contains the training results of the models during training for example, training loss, validation loss, training accuracy, validation accuracy, etc.
 
 
-Thank you for visiting my repository. If you liked it, please give a star ⭐️
+Thank you for visiting my repository. If you liked it, please give a star ⭐️⭐
