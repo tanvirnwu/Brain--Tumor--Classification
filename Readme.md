@@ -21,6 +21,7 @@ There are 4 classes in the dataset:
 I use the following models to classify Brain Tumor:
 - AlexNet
 - MobileNetV2
+- VGG16
 
 ## Saved Models
 I have saved the best performing model in the `Saved Models` folder.
