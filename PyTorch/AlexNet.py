@@ -3,8 +3,8 @@ from TrainSteps import *
 from torchvision.models import alexnet, AlexNet_Weights
 
 # ================= Paths for Saving Model & Training Results =================
-model_path = "E:\PyTorch\Classification Tasks\Brain Tumor Classification (MRI)\PyTorch\Saved Models\AlexNet_1.pth"
-results_path = r'E:\PyTorch\Classification Tasks\Brain Tumor Classification (MRI)\PyTorch\Training Results\AlexNet_1_results.pkl'
+model_path = "E:\PyTorch\Classification Tasks\Brain Tumor Classification (MRI)\PyTorch\Saved Models\AlexNet_2.pth"
+results_path = r'E:\PyTorch\Classification Tasks\Brain Tumor Classification (MRI)\PyTorch\Training Results\AlexNet_2_results.pkl'
 
 # ================= Loading AlexNet Model's Pretrained Weights  =================
 AlexNet_1 = alexnet(weights=AlexNet_Weights.IMAGENET1K_V1)
